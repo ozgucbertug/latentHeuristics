@@ -6,4 +6,4 @@ The project aims to investigate learning-based models trained on problem-specifi
 
 ## References:
 ![alt text](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/model.jpg?raw=true)
-The Autoencoder architecture used in this research is based on a previous research titled "Learning Representations and Generative Models for 3D Point Clouds" by Achlioptas et al. ([`arXiv`](https://arxiv.org/abs/1707.02392) | [`GitHub`](https://github.com/optas/latent_3d_points))
+The Autoencoder architecture used in this research is based on a previous research titled *"Learning Representations and Generative Models for 3D Point Clouds"* by Achlioptas et al. ([`arXiv`](https://arxiv.org/abs/1707.02392) | [`GitHub`](https://github.com/optas/latent_3d_points))
