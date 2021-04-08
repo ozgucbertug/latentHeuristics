@@ -1,3 +1,9 @@
+--- 
+title: Puppies Are Cute 
+description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>) 
+description: Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) 
+---
+
 ## This is a Header!
 
 You can use the [editor on GitHub](https://github.com/ozgucbertug/latentHeuristics/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
