@@ -70,6 +70,14 @@ _Arithmeti on 3D shapesc_ [2]
 
 In this work, we are going to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
+# Dataset
+
+Within the scope of this project, we plan to use the dataset available at Princeton ModelNet (Z. Wu et al., 2015), a collaborative project of online 3D shapes available for research. Princeton ModelNet covers 662 objects with 127,915 unique CAD models
+Each model on the ModelNet dataset is labeled and classified by category tags. However, models under each subsets are unlabeled. Since our aim is to not classify the models but rather extract local and global geometric features and fill in the creative space between models to explore different designs, the lack of these labels does not pose any problem.
+
+In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
+
+
 # Results
 Input/output/Loss values
 
