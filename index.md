@@ -28,6 +28,22 @@ In the context of an optimization algorithm, the function used to evaluate a can
 We may seek to maximize or minimize the objective function, meaning that we are searching for a candidate solution that has the highest or lowest score respectively.
 Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss".
 
+### The Earth Mover's Distance:
+
+The Earth Mover's Distance (EMD) is a method to evaluate dissimilarity between two multi-dimensional distributions in some feature space where a distance measure between single features, which we call the ground distance is given. The EMD "lifts" this distance from individual features to full distributions. 
+
+Intuitively, given two distributions, one can be seen as a mass of earth properly spread in space, the other as a collection of holes in that same space. Then, the EMD measures the least amount of work needed to fill the holes with earth. Here, a unit of work corresponds to transporting a unit of earth by a unit of ground distance. 
+
+>EQUATION?
+
+### Chamfer Distance:
+
+The chamfer distance function measures the similarity of two contours where the distance takes two sets of edge points, from a template T and an edge map E, and evaluates the score at a translation.
+
+>EQUATION?
+
+__For our model, we implemennted the Chamfer distannce loss funcrtion__
+
 
 # Can learning-based models trained on customized datasets capture geometric design intention?
 
@@ -61,5 +77,6 @@ Input/output/Loss values
 
 # References
 https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
+https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/RUBNER/emd.htm
 
 
