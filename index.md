@@ -4,6 +4,31 @@ description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</
 ---
 ![](https://cs.stanford.edu/~kaichun/structurenet/images/teaser.png)
 
+# Our motivation
+
+The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process. Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
+
+# Background information
+
+## Variational Auto-Encoder (VAE)
+
+In machine learning, dimensionality reduction is the process of reducing the number of features that describe some data. This reduction is done either by selection (only some existing features are conserved) or by extraction (a reduced number of new features are created based on the old features) and can be useful in many situations that require low dimensional data. Dimensionality reduction can be interpreted as data compression where the encoder compress the data (from the initial space to the encoded space, also called latent space) whereas the decoder decompress them. The general idea of autoencoders is pretty simple and consists in setting an encoder and a decoder as neural networks and to learn the best encoding-decoding scheme using an iterative optimisation process.
+
+![](https://miro.medium.com/max/4800/1*iSfaVxcGi_ELkKgAG0YRlQ@2x.png)
+_Encoding in different dimensions_ [0]
+
+A variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process: instead of encoding an input as a single point, we encode it as a distribution over the latent space.
+
+![](https://miro.medium.com/max/4800/1*ejNnusxYrn1NRDZf4Kg2lw@2x.png)
+_Difference between autoencoder (deterministic) and variational autoencoder (probabilistic)_ [0]
+
+## Loss fucntions
+
+In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.
+We may seek to maximize or minimize the objective function, meaning that we are searching for a candidate solution that has the highest or lowest score respectively.
+Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss".
+
+
 # Can learning-based models trained on customized datasets capture geometric design intention?
 
 The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process.
@@ -29,11 +54,12 @@ _Arithmeti on 3D shapesc_ [2]
 
 In this work, we are going to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
-# (results)
+# Results
+Input/output/Loss values
 
-# (takeaway)
+# Takeaway
 
 # References
-
+https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
 
 
