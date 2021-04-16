@@ -77,7 +77,7 @@ Each model on the ModelNet dataset is labeled and classified by category tags. H
 
 In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
 
-![](file:///C:/Users/sns5410/AppData/Local/Temp/customDataset.gif) 
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/customDataset.gif) 
 _Various forms of Vase generated from Rhinoceros 3D_[4]
 
 # Results
