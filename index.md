@@ -2,7 +2,7 @@
 title: Latent Heuristics
 description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) 
 ---
-![](https://cs.stanford.edu/~kaichun/structurenet/images/teaser.png)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/customDataset.gif)
 
 # Our motivation
 
