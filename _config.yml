@@ -2,7 +2,6 @@ theme: jekyll-theme-minimal
 show_downloads: True
 title: [Latent Heuristics]
 description: [In this research, we aim to investigate learning-based models trained on problem-specific datasets to facilitate creative inquiries by providing design suggestions. 
-By doing so, we aim to address the gap between task-oriented generic solutions provided by current CAD systems and the reciprocal and problem-specific nature of the act of designing. 
-Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  
-Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) ]
+By doing so, we aim to address the gap between task-oriented generic solutions provided by current CAD systems and the reciprocal and problem-specific nature of the act of designing. ]
+description: [Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>)] 
 ...
