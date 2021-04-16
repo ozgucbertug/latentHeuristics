@@ -2,7 +2,7 @@
 title: Latent Heuristics
 description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) 
 ---
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/customDataset.gif)
+![](https://cs.stanford.edu/~kaichun/structurenet/images/teaser.png)
 
 # Our motivation
 
@@ -65,7 +65,7 @@ _Architecture_ [1]
 
 In this work, we aim to explore a similar field while emphasizing the possibilities and freedom this architecture can offer in the space of suggestive creative design as opposed to engineering design. While our approach follows a similar path established by Achlioptas et al., we intend to explore the suggestive design subjectively by taking a narrow design space and extrapolating the dataset. For this reason, we propose focusing on one or two categories of shapes and enable suggestive design space that places emphasis on subjective design over objective design.
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/model.jpg)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/model.jpg?raw=true)
 _Architecture implemented in this work_[2]
 
 In this work, we are going to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
