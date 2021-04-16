@@ -66,7 +66,7 @@ _Architecture_ [1]
 In this work, we aim to explore a similar field while emphasizing the possibilities and freedom this architecture can offer in the space of suggestive creative design as opposed to engineering design. While our approach follows a similar path established by Achlioptas et al., we intend to explore the suggestive design subjectively by taking a narrow design space and extrapolating the dataset. For this reason, we propose focusing on one or two categories of shapes and enable suggestive design space that places emphasis on subjective design over objective design.
 
 ![](https://hackernoon.com/hn-images/1*yMFJ-7fokU0Xkx89pSFfew.gif)
-_Arithmeti on 3D shapesc_ [2]
+_Arithmetic on 3D shapes_ [2]
 
 In this work, we are going to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
@@ -77,6 +77,8 @@ Each model on the ModelNet dataset is labeled and classified by category tags. H
 
 In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
 
+![](file:///C:/Users/sns5410/AppData/Local/Temp/customDataset.gif) 
+_Various forms of Vase generated from Rhinoceros 3D_[4]
 
 # Results
 Input/output/Loss values
