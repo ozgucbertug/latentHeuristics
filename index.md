@@ -6,9 +6,22 @@ description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</
 
 # Our motivation
 
-The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process. Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
+The gap between linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process. Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
 
 # Background information
+
+## Past Reserach
+Historically, the field of design has been influenced by new techniques and technologies for design representation and fabrication. Arguably, one of the most influential of such technologies has been CAD since its conceptualization in the early 60s (Cardoso Llach, 2015). Even though early visions for CAD were to create a collaborative partner in creative exploration, the course of future research shifted from developing a collaborative partner to “perfect slaves'' poised to liberate designers from arduous tasks [1], This change in perspective crystalised the instrumentalist perspective surrounding the computer aids to design discourse.
+
+Discussing the implications of computational systems, Dreyfus asserts that human agency is capable of responding to flexible criterion where machines excel at the constant evaluation of information [2]. Creative design inquires, however, rarely follow a linear pipeline and often re-evaluate context during the design process. Similar to Dreyfus’ observation, Donald Schon defines designers’ behavior as a sequence of “seeing, drawing, seeing” [3], highlighting a reciprocal interaction throughout the design process in which discoveries and ambiguities inform design decisions. 
+
+##Current Research 
+Current literature that investigates 3D ML models offer promising results in low-dimensional representation and generation of 3D objects by appropriating well established models. Some of the most popular models used in conjunction with 3D data are Variational Autoencoders (VAE) and Generative Adversarial Networks (GAN). These models are used in a wide range of problems from scene segmentation to object classification in different applications such as autonomous vehicles and robotics.
+
+One area that research in geometric learning focuses on is how the geometry is represented within these models. Currently, there are three mainstream representation methods for handling 3D data representation in learning-based models; (1) voxels, (2) point clouds and (3) meshes. The underlying differences between the three methods lie in the application, operation, and representation. Voxel-based approaches are prevalent in ML applications as they are inherently very similar to multidimensional inputs such as images. However, since the representation relies on a grid-based data structure, this approach is limited in its ability to scale. Point clouds, on the other hand, define each point as a set of cartesian x, y, z coordinates. It is one of the most popular ways of representing 3D data as it offers more flexibility with scaling and can easily be worked into mesh geometries using computer graphics algorithms. However, since point clouds are often unorganized in terms of neighborhood information, this representation model needs to be approached carefully, especially in conjunction with ML models. Lastly, the mesh representation stores data in polygons and vertices that make up the faces of a volume. This eliminates the problem of unorganized data structure seen in point clouds. However, since this approach incorporates the most detailed data, the operations can quickly become computationally heavy.
+
+
+## Deep Auto-Encoder
 
 ## Variational Auto-Encoder (VAE)
 
@@ -21,6 +34,17 @@ A variational autoencoder can be defined as being an autoencoder whose training 
 
 ![](https://miro.medium.com/max/4800/1*ejNnusxYrn1NRDZf4Kg2lw@2x.png)
 _Difference between autoencoder (deterministic) and variational autoencoder (probabilistic)_ [0]
+
+# Can learning-based models trained on customized datasets capture geometric design intention?
+
+The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process.
+
+![](https://hackernoon.com/hn-images/1*vEZE5VcjUr5RUbt_OWfR_w.gif)
+_Interpolation of 3D shapesc_ [0]
+
+Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
+
+# System Architecture 
 
 ## Loss fucntions
 
@@ -44,20 +68,9 @@ The chamfer distance function measures the similarity of two contours where the 
 
 __For our model, we implemennted the Chamfer distannce loss funcrtion__
 
+## Using VAE to explore latent space
 
-# Can learning-based models trained on customized datasets capture geometric design intention?
-
-The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process.
-
-![](https://hackernoon.com/hn-images/1*vEZE5VcjUr5RUbt_OWfR_w.gif)
-_Interpolation of 3D shapesc_ [0]
-
-Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
-
-
-# Using VAE to explore latent space
-
-sive while offering little to no meaningful control over the output.
+VAE offers simplicity, scalable training, and, most importantly for us, the possibility of manipulating and analyzing the outcome. In contrast, GANs and other methods are computationally expensive while offering little to no meaningful control over the output. 
 The primary approach comes from the prior work done by Achlioptas et al. in their paper titled “Learning Representations and Generative Models for 3D Point Clouds” (Achlioptas et al., 2018), where they explore the data-driven design capabilities of AE and GAN. By looking at geometric data as point clouds and employing a deep Auto-Encoder, they were able to reconstruct and generalize the 3D dataset to analyze, interpolate and edit 3D shapes. 
 
 ![](https://hackernoon.com/hn-images/1*op0VO_QK4vMtCnXtmigDhA.png)
@@ -68,8 +81,7 @@ In this work, we aim to explore a similar field while emphasizing the possibilit
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/model.jpg?raw=true)
 _Architecture implemented in this work_[2]
 
-In this work, we are going to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
-
+We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
 
 # Dataset
