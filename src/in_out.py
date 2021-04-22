@@ -11,7 +11,7 @@ from . general_utils import rand_rotation_matrix
 from .. external.python_plyfile.plyfile import PlyElement, PlyData
 
 snc_synth_id_to_category = {
-    '00000000': 'custom',
+    '00000000': 'custom_single', '00000001': 'custom_multi',
     '02691156': 'airplane',  '02773838': 'bag',        '02801938': 'basket',
     '02808440': 'bathtub',   '02818832': 'bed',        '02828884': 'bench',
     '02834778': 'bicycle',   '02843684': 'birdhouse',  '02871439': 'bookshelf',
