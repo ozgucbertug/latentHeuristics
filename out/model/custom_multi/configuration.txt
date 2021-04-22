@@ -18,10 +18,6 @@
                            n_z: None
              saver_max_to_keep: None
                     saver_step: 10
-<<<<<<< Updated upstream
-                     train_dir: ../data/custom_multi
-=======
                      train_dir: ../out/model/custom_multi
->>>>>>> Stashed changes
                training_epochs: 500
                       z_rotate: False
