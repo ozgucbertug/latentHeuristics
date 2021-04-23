@@ -113,6 +113,7 @@ def pc_loader(f_name):
 
 def load_all_point_clouds_under_folder(top_dir, n_threads=20, file_ending='.ply', verbose=False):
     file_names = sorted([f for f in files_in_subdirs(top_dir, file_ending)])
+    print(file_names[0])
     pclouds, model_ids, syn_ids = load_point_clouds_from_filenames(file_names, n_threads, loader=pc_loader, verbose=verbose)
     return PointCloudDataSet(pclouds, labels=syn_ids + '_' + model_ids, init_shuffle=False)
 
