@@ -7,7 +7,7 @@ Created on November 26, 2017
 import numpy as np
 from numpy.linalg import norm
 import matplotlib.pylab  as plt
-from mpl_toolkits.mplot3d import Axes3D
+# from mpl_toolkits.mplot3d import Axes3D
 
 
 def rand_rotation_matrix(deflection=1.0, seed=None):

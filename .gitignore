@@ -1,4 +1,6 @@
-data\
-.vscode\
-out\ply\
-ghData\data\
+data/
+.vscode/
+out/ply/
+ghData/data/
+notebooks/.ipynb_checkpoints/
+__pycache__/
