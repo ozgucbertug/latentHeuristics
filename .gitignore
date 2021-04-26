@@ -1,6 +1,6 @@
 data/
-.vscode/
 out/ply/
 ghData/data/
+.vscode/
 notebooks/.ipynb_checkpoints/
 __pycache__/
