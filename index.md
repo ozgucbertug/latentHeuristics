@@ -25,23 +25,26 @@ The primary approach employed in this research comes from the prior work done by
 While our approach follows a similar path established by Achlioptas et al., we extend the application of this method in latent design space by taking a narrow design space and extrapolating the dataset. As a proof of concept, we focus on a simple vase topology that is addressed by different design approaches and enable the latent design space that places emphasis on subjective design over objective design.
 
 # Dataset
+
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure0.gif?raw=true)
 _Parametric model developed for synthetic data generation._
+
 This model was initially tested using the point cloud dataset provided by the authors, which consists of uniformly sampled point clouds from a subset of the ShapeNet database. This step was necessary to validate that both the operating system and driver dependencies were met. Following the successful training and exploration of the model with the default dataset, we have shifted our focus to developing parametric scripts on Grasshopper for Rhinoceros 3D that is capable of generating the design space for a vase topology. This parametric model is composed of seven distinct parameters that generate a NURBS curve to create a surface of revolution. This surface was later sampled uniformly to generate point cloud data for training the AE network. In order to broadly capture the design space using these seven design parameters, we have generated 3^7=2,187 synthetic data points, sampling each parameter range three times. Since the range of the parameters are tied to each other, this approach resulted in unique designs that vary in height, maximum and minimum radius, global curvature and top and bottom radii.
+
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
 _Series of datapoints generated using the parametric model for Single Class Dataset_
+
 In addition to broadly capturing a design space, we have also developed three additional scripts that apply different local geometric features to these surfaces. These geometric features are corrugation that creates a ridge and groove pattern, asymmetric that deforms the geometry by introducing random attractor points that pull and push the surface, and low polygon that reconstructs the original geometry with planar facets. Each design approach is randomly generated 2000 data points, totaling 8000 distinct geometries together with the simple surface generation.
+
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
 _Series of datapoints generated using the parametric model for Multi Class Dataset_
+
 With these two datasets, our goal is to understand the capabilities of the AE model in learning both local and global geometric features. The first dataset that captures the entire space by sampling all the possible variables is used to explore whether the AE model used in this study is capable of capturing global geometric features of the design space. Within this experiment, we use the reconstruction and interpolation accuracy as our metric for evaluating the success of the AE model. Using the initial surface as the ground truth, we calculate the reconstruction deviation. Similarly, we can investigate how well each parameter is captured by the model using the parametric model interpolation as the ground truth.
 
 ## Using AE to explore latent space
 
 VAE offers simplicity, scalable training, and, most importantly for us, the possibility of manipulating and analyzing the outcome. In contrast, GANs and other methods are computationally expensive while offering little to no meaningful control over the output. 
 The primary approach comes from the prior work done by Achlioptas et al. in their paper titled “Learning Representations and Generative Models for 3D Point Clouds” (Achlioptas et al., 2018), where they explore the data-driven design capabilities of AE and GAN. By looking at geometric data as point clouds and employing a deep Auto-Encoder, they were able to reconstruct and generalize the 3D dataset to analyze, interpolate and edit 3D shapes. 
-
-![](https://hackernoon.com/hn-images/1*op0VO_QK4vMtCnXtmigDhA.png)
-_Architecture_ [3]
 
 In this work, we aim to explore a similar field while emphasizing the possibilities and freedom this architecture can offer in the space of suggestive creative design as opposed to engineering design. While our approach follows a similar path established by Achlioptas et al., we intend to explore the suggestive design subjectively by taking a narrow design space and extrapolating the dataset. For this reason, we propose focusing on one or two categories of shapes and enable suggestive design space that places emphasis on subjective design over objective design.
 
@@ -52,12 +55,15 @@ We aim to work with point cloud representation over other prevailing methods. Po
 
 # Results
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure5.jpg?raw=true)
-Reconstruction accuracy
+_Reconstruction accuracy for multi class dataset_
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure6.gif?raw=true)
-Interpolation 
+_Interpolation between multi class dataset. From top to bottom, "simple" to "corrugated", "simple" to "asymmetric", and "simple" to "lowPoly"_
 
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure7.gif?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure8.gif?raw=true)
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure9.gif?raw=true)
+Interpolation accuracy
 
 # Future Work
 This work primarily focuses on stage one of a two stage project. Stage one (Geometric Learning) uses a deep autoencoder that utilizes input from our dataset to train the model into learning the geometric patterns and intentions that can then decode it from the latent space. 
