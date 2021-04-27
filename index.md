@@ -17,7 +17,7 @@ Historically, the field of design has been influenced by new techniques and tech
 Current literature that investigates 3D ML models offer promising results in low-dimensional representation and generation of 3D objects by appropriating well established models. Some of the most popular models used in conjunction with 3D data are Variational Autoencoders (VAE) and Generative Adversarial Networks (GAN). These models are used in a wide range of problems from scene segmentation to object classification in different applications such as autonomous vehicles and robotics.
 
 One area that research in geometric learning focuses on is how the geometry is represented within these models. Currently, there are three mainstream representation methods for handling 3D data representation in learning-based models; (1) voxels, (2) point clouds and (3) meshes. The underlying differences between the three methods lie in the application, operation, and representation. Voxel-based approaches are prevalent in ML applications as they are inherently very similar to multidimensional inputs such as images. However, since the representation relies on a grid-based data structure, this approach is limited in its ability to scale. Point clouds, on the other hand, define each point as a set of cartesian x, y, z coordinates. It is one of the most popular ways of representing 3D data as it offers more flexibility with scaling and can easily be worked into mesh geometries using computer graphics algorithms. However, since point clouds are often unorganized in terms of neighborhood information, this representation model needs to be approached carefully, especially in conjunction with ML models. Lastly, the mesh representation stores data in polygons and vertices that make up the faces of a volume. This eliminates the problem of unorganized data structure seen in point clouds. However, since this approach incorporates the most detailed data, the operations can quickly become computationally heavy.
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure2.jpg?raw=true)
+
 # System Architecture
 In machine learning, dimensionality reduction is the process of reducing the number of features that describe some data. This reduction is done either by selection (only some existing features are conserved) or by extraction (a reduced number of new features are created based on the old features) and can be useful in many situations that require low dimensional data. Dimensionality reduction can be interpreted as data compression where the encoder compress the data (from the initial space to the encoded space, also called latent space) whereas the decoder decompress them. The general idea of autoencoders is pretty simple and consists in setting an encoder and a decoder as neural networks and to learn the best encoding-decoding scheme using an iterative optimisation process.
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure1.jpg?raw=true)
@@ -29,10 +29,10 @@ While our approach follows a similar path established by Achlioptas et al., we e
 _Parametric model developed for synthetic data generation._
 This model was initially tested using the point cloud dataset provided by the authors, which consists of uniformly sampled point clouds from a subset of the ShapeNet database. This step was necessary to validate that both the operating system and driver dependencies were met. Following the successful training and exploration of the model with the default dataset, we have shifted our focus to developing parametric scripts on Grasshopper for Rhinoceros 3D that is capable of generating the design space for a vase topology. This parametric model is composed of seven distinct parameters that generate a NURBS curve to create a surface of revolution. This surface was later sampled uniformly to generate point cloud data for training the AE network. In order to broadly capture the design space using these seven design parameters, we have generated 3^7=2,187 synthetic data points, sampling each parameter range three times. Since the range of the parameters are tied to each other, this approach resulted in unique designs that vary in height, maximum and minimum radius, global curvature and top and bottom radii.
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
-_Series of datapoints generated using the parametric model_
+_Series of datapoints generated using the parametric model for Dataset A_
 In addition to broadly capturing a design space, we have also developed three additional scripts that apply different local geometric features to these surfaces. These geometric features are corrugation that creates a ridge and groove pattern, asymmetric that deforms the geometry by introducing random attractor points that pull and push the surface, and low polygon that reconstructs the original geometry with planar facets. Each design approach is randomly generated 2000 data points, totaling 8000 distinct geometries together with the simple surface generation.
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
-_Architecture_
+_Series of datapoints generated using the parametric model for Dataset B_
 With these two datasets, our goal is to understand the capabilities of the AE model in learning both local and global geometric features. The first dataset that captures the entire space by sampling all the possible variables is used to explore whether the AE model used in this study is capable of capturing global geometric features of the design space. Within this experiment, we use the reconstruction and interpolation accuracy as our metric for evaluating the success of the AE model. Using the initial surface as the ground truth, we calculate the reconstruction deviation. Similarly, we can investigate how well each parameter is captured by the model using the parametric model interpolation as the ground truth.
 
 ## Using AE to explore latent space
@@ -49,26 +49,6 @@ In this work, we aim to explore a similar field while emphasizing the possibilit
 _Architecture implemented in this work_[4]
 
 We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
-
-![](https://hackernoon.com/hn-images/1*yMFJ-7fokU0Xkx89pSFfew.gif)
-_Arithmetic on 3D shapes_ [5]
-
-
-# Dataset
-
-Within the scope of this project, we plan to use the dataset available at Princeton ModelNet (Z. Wu et al., 2015), a collaborative project of online 3D shapes available for research. Princeton ModelNet covers 662 objects with 127,915 unique CAD models
-Each model on the ModelNet dataset is labeled and classified by category tags. However, models under each subsets are unlabeled. Since our aim is to not classify the models but rather extract local and global geometric features and fill in the creative space between models to explore different designs, the lack of these labels does not pose any problem.
-
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
-_Different shape and size of Vases in the dataset_ [6]
-
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
-_Different categories of Vase shapes to explore design intent of ML model_[7]
-
-In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
-
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure0.gif?raw=true) 
-_Various forms of a Vase generated from Rhinoceros 3D to explore custome synthetic data_[8]
 
 # Results
 Input/output/Loss values
