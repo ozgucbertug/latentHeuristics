@@ -62,6 +62,7 @@ The reconstruction accuracy for the multi class dataset, on the other hand, prov
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure5.jpg?raw=true)
 _Figure 7. Reconstruction accuracy for multi class dataset._
 
+The t-SNE plot generated using latent vectors of the multi class dataset shown in Figure 8 provides an insight on how the AE model learned the dataset. From this plot, we deduce that the AE model primarily learns global geometric features which results in heavily overlapped latent space vectors.
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure10.gif?raw=true)
 _Figure 8. t-SNE plot for multi class dataset/_
