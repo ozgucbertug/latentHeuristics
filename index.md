@@ -95,7 +95,7 @@ _Arithmetic on 3D shapes_ [3]
 
 In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/customDataset.gif?raw=true) 
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure0.gif?raw=true) 
 _Various forms of a Vase generated from Rhinoceros 3D to explore custome synthetic data_[4]
 
 # Results
