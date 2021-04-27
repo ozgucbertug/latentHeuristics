@@ -3,8 +3,7 @@ title: Latent Heuristics
 description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) 
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure7.gif?raw=true)
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure8.gif?raw=true)
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure9.gif?raw=true)
+
 
 # Our Motivation
 
@@ -36,14 +35,14 @@ _Encoding in different dimensions_ [0]
 A variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process: instead of encoding an input as a single point, we encode it as a distribution over the latent space.
 
 ![](https://miro.medium.com/max/4800/1*ejNnusxYrn1NRDZf4Kg2lw@2x.png)
-_Difference between autoencoder (deterministic) and variational autoencoder (probabilistic)_ [0]
+_Difference between autoencoder (deterministic) and variational autoencoder (probabilistic)_ [1]
 
 # Can learning-based models trained on customized datasets capture geometric design intention?
 
 The gap between the linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process.
 
 ![](https://hackernoon.com/hn-images/1*vEZE5VcjUr5RUbt_OWfR_w.gif)
-_Interpolation of 3D shapesc_ [0]
+_Interpolation of 3D shapesc_ [2]
 
 Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
 
@@ -77,17 +76,17 @@ VAE offers simplicity, scalable training, and, most importantly for us, the poss
 The primary approach comes from the prior work done by Achlioptas et al. in their paper titled “Learning Representations and Generative Models for 3D Point Clouds” (Achlioptas et al., 2018), where they explore the data-driven design capabilities of AE and GAN. By looking at geometric data as point clouds and employing a deep Auto-Encoder, they were able to reconstruct and generalize the 3D dataset to analyze, interpolate and edit 3D shapes. 
 
 ![](https://hackernoon.com/hn-images/1*op0VO_QK4vMtCnXtmigDhA.png)
-_Architecture_ [1]
+_Architecture_ [3]
 
 In this work, we aim to explore a similar field while emphasizing the possibilities and freedom this architecture can offer in the space of suggestive creative design as opposed to engineering design. While our approach follows a similar path established by Achlioptas et al., we intend to explore the suggestive design subjectively by taking a narrow design space and extrapolating the dataset. For this reason, we propose focusing on one or two categories of shapes and enable suggestive design space that places emphasis on subjective design over objective design.
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure1.jpg?raw=true)
-_Architecture implemented in this work_[2]
+_Architecture implemented in this work_[4]
 
 We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
 ![](https://hackernoon.com/hn-images/1*yMFJ-7fokU0Xkx89pSFfew.gif)
-_Arithmetic on 3D shapes_ [3]
+_Arithmetic on 3D shapes_ [5]
 
 
 # Dataset
@@ -96,25 +95,27 @@ Within the scope of this project, we plan to use the dataset available at Prince
 Each model on the ModelNet dataset is labeled and classified by category tags. However, models under each subsets are unlabeled. Since our aim is to not classify the models but rather extract local and global geometric features and fill in the creative space between models to explore different designs, the lack of these labels does not pose any problem.
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
-_Different shape and size of Vases in the dataset_ [3]
+_Different shape and size of Vases in the dataset_ [6]
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
-_Different categories of Vase shapes to explore design intent of ML model_[2]
+_Different categories of Vase shapes to explore design intent of ML model_[7]
 
 In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure0.gif?raw=true) 
-_Various forms of a Vase generated from Rhinoceros 3D to explore custome synthetic data_[4]
+_Various forms of a Vase generated from Rhinoceros 3D to explore custome synthetic data_[8]
 
 # Results
 Input/output/Loss values
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure8.gif?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure9.gif?raw=true)
 
 # Future Work
 This work primarily focuses on stage one of a two stage project. Stage one (Geometric Learning) uses a deep autoencoder that utilizes input from our dataset to train the model into learning the geometric patterns and intentions that can then decode it from the latent space. 
 
 In stage two of this project (Hypothesis Generation), we aim to utilize the decoder from stage one to reconstruct partial or incomplete input through the latent space vector. This stage allows  to  learn  shape  completion  using  an  unsupervised  maximum  likelihood  (ML)  loss  by training a new recognition model, a new encoder.
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure2.jpg?raw=true) _Stage one - Geometric Learning and Stage two - Hypothesis Generation_[4]
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure2.jpg?raw=true) _Stage one - Geometric Learning and Stage two - Hypothesis Generation_[9]
 
 # References
 https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
