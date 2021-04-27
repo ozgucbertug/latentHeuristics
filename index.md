@@ -63,5 +63,5 @@ The reconstruction accuracy for the multi class dataset, on the other hand, prov
 _Figure 7. Reconstruction accuracy for multi class dataset._
 
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure10.jpg?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure10.gif?raw=true)
 _Figure 8. t-SNE plot for multi class dataset/_
