@@ -59,13 +59,13 @@ The Earth Mover's Distance (EMD) is a method to evaluate dissimilarity between t
 
 Intuitively, given two distributions, one can be seen as a mass of earth properly spread in space, the other as a collection of holes in that same space. Then, the EMD measures the least amount of work needed to fill the holes with earth. Here, a unit of work corresponds to transporting a unit of earth by a unit of ground distance. 
 
->EQUATION?
+
 
 ### Chamfer Distance:
 
 The chamfer distance function measures the similarity of two contours where the distance takes two sets of edge points, from a template T and an edge map E, and evaluates the score at a translation.
 
->EQUATION?
+
 
 __For our model, we implemennted the Chamfer distannce loss funcrtion__
 
@@ -79,7 +79,7 @@ _Architecture_ [1]
 
 In this work, we aim to explore a similar field while emphasizing the possibilities and freedom this architecture can offer in the space of suggestive creative design as opposed to engineering design. While our approach follows a similar path established by Achlioptas et al., we intend to explore the suggestive design subjectively by taking a narrow design space and extrapolating the dataset. For this reason, we propose focusing on one or two categories of shapes and enable suggestive design space that places emphasis on subjective design over objective design.
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/model.jpg?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure1.jpg?raw=true)
 _Architecture implemented in this work_[2]
 
 We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
