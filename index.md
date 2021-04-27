@@ -29,10 +29,10 @@ While our approach follows a similar path established by Achlioptas et al., we e
 _Parametric model developed for synthetic data generation._
 This model was initially tested using the point cloud dataset provided by the authors, which consists of uniformly sampled point clouds from a subset of the ShapeNet database. This step was necessary to validate that both the operating system and driver dependencies were met. Following the successful training and exploration of the model with the default dataset, we have shifted our focus to developing parametric scripts on Grasshopper for Rhinoceros 3D that is capable of generating the design space for a vase topology. This parametric model is composed of seven distinct parameters that generate a NURBS curve to create a surface of revolution. This surface was later sampled uniformly to generate point cloud data for training the AE network. In order to broadly capture the design space using these seven design parameters, we have generated 3^7=2,187 synthetic data points, sampling each parameter range three times. Since the range of the parameters are tied to each other, this approach resulted in unique designs that vary in height, maximum and minimum radius, global curvature and top and bottom radii.
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
-_Series of datapoints generated using the parametric model for Dataset A_
+_Series of datapoints generated using the parametric model for Single Class Dataset_
 In addition to broadly capturing a design space, we have also developed three additional scripts that apply different local geometric features to these surfaces. These geometric features are corrugation that creates a ridge and groove pattern, asymmetric that deforms the geometry by introducing random attractor points that pull and push the surface, and low polygon that reconstructs the original geometry with planar facets. Each design approach is randomly generated 2000 data points, totaling 8000 distinct geometries together with the simple surface generation.
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
-_Series of datapoints generated using the parametric model for Dataset B_
+_Series of datapoints generated using the parametric model for Multi Class Dataset_
 With these two datasets, our goal is to understand the capabilities of the AE model in learning both local and global geometric features. The first dataset that captures the entire space by sampling all the possible variables is used to explore whether the AE model used in this study is capable of capturing global geometric features of the design space. Within this experiment, we use the reconstruction and interpolation accuracy as our metric for evaluating the success of the AE model. Using the initial surface as the ground truth, we calculate the reconstruction deviation. Similarly, we can investigate how well each parameter is captured by the model using the parametric model interpolation as the ground truth.
 
 ## Using AE to explore latent space
@@ -51,8 +51,12 @@ _Architecture implemented in this work_[4]
 We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
 # Results
-Input/output/Loss values
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure8.gif?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure5.jpg?raw=true)
+Reconstruction accuracy
+
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure6.gif?raw=true)
+Interpolation 
+
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure9.gif?raw=true)
 
 # Future Work
