@@ -1,7 +1,8 @@
 theme: jekyll-theme-minimal
 show_downloads: True
 title: [Latent Heuristics]
-tagline: [Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>) /n Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>)]
+url: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>) 
+url: Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>)]
 description: [Our goal is to investigate learning-based models trained on problem-specific datasets to facilitate creative inquiries by providing design suggestions. By doing so, we aim to address the gap between task-oriented generic solutions provided by current CAD systems and the reciprocal and problem-specific nature of the act of designing. ]
 ...
 
