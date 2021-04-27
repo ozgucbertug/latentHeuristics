@@ -53,8 +53,11 @@ _Figure 5. Interpolation accuracy between single class dataset points._
 
 Figure 5 above illustrates three interpolation operations between six distinct data points. From these results, we can observe that the AE network yields a very accurate reconstruction of the input point cloud. For these data points, the maximum deviation from the ground truth was less than 0.001 units. However, during the interpolation between known data points, we can see that the AE network does not necessarily follow the geometric rules defined in the parametric model. Although this might be considered an error based on numeric metrics such as the one we use, we believe that this behavior can be beneficial in creative inquiries. It opens up the design space further based on the importance of different learned geometric features.
 
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure5.jpg?raw=true)
-_Reconstruction accuracy for multi class dataset._
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure6.gif?raw=true)
-_Interpolation between multi class dataset points. From top to bottom: "simple" to "corrugated", "simple" to "asymmetric", and "simple" to "lowPoly"._
+_Figure 6. Interpolation between multi class dataset points. From top to bottom: "simple" to "corrugated", "simple" to "asymmetric", and "simple" to "lowPoly"._
+
+The reconstruction accuracy for the multi class dataset, on the other hand, provides interesting insights into the capabilities of the AE network. While the model can reconstruct the “simple” and “corrugated” classes near perfectly with a maximum deviation of 0.0005 units, as more random features are introduced, such as the asymmetric deformation and low polygon representation, the reconstruction accuracy considerably decreases. The examples of the “asymmetric” class reconstruction in Figure 6 yielded a maximum deviation of 0.002 units. We can also see that the most extreme deviations are clustered around where the geometry is deformed the most. Similarly, the “lowPoly” class suffered from reconstruction accuracy, as it failed to capture the facets of the low polygon representation and instead smoothed out the reconstruction into a more continuous point cloud. We can see that the reconstruction errors are clustered around the facet centroids, which signifies that the AE model failed to grasp minute local features.
+
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure5.jpg?raw=true)
+_Figure 7. Reconstruction accuracy for multi class dataset._
