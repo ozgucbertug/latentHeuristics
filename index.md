@@ -1,8 +1,10 @@
 --- 
 title: Latent Heuristics
 description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</a>)  Shakthi Suresh (<a href="sns5410@psu.edu">sns5410@psu.edu</a>) 
----
-![](https://cs.stanford.edu/~kaichun/structurenet/images/teaser.png)
+
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure7.gif?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure8.gif?raw=true)
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure9.gif?raw=true)
 
 # Our Motivation
 
@@ -82,11 +84,6 @@ In this work, we aim to explore a similar field while emphasizing the possibilit
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure1.jpg?raw=true)
 _Architecture implemented in this work_[2]
 
-
-![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
-_Different categories of Vase shapes to explore design intent of ML model_[2]
-
-
 We aim to work with point cloud representation over other prevailing methods. Points clouds provide unordered datasets while being computationally lenient, less memory intensive, and through surface reconstruction, offer an easy path to mesh geometries conversions when needed. Other representation models like voxels and meshes were omitted since they lead to computationally heavy models. We believe that point cloud representation offers an optimal middle ground between the memory-intensive voxel and computationally expensive mesh representations.
 
 ![](https://hackernoon.com/hn-images/1*yMFJ-7fokU0Xkx89pSFfew.gif)
@@ -100,6 +97,9 @@ Each model on the ModelNet dataset is labeled and classified by category tags. H
 
 ![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure3.jpg?raw=true)
 _Different shape and size of Vases in the dataset_ [3]
+
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure4.jpg?raw=true)
+_Different categories of Vase shapes to explore design intent of ML model_[2]
 
 In addition to using ModelNet for developing and testing our model, we also aim to explore custom synthetic data generated using parametric modeling tools such as Grasshopper for Rhinoceros 3D. This would allow us to explore how geometric intentions can be learned through a deliberately biased dataset and investigate how well learning-based algorithms can generate problem-specific solutions.
 
