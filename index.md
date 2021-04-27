@@ -4,9 +4,10 @@ description: Ozguc Bertug Capunaman (<a href="okc5048@psu.edu">okc5048@psu.edu</
 ---
 ![](https://cs.stanford.edu/~kaichun/structurenet/images/teaser.png)
 
-# Our motivation
+# Our Motivation
 
 The gap between linear and discrete nature of computational systems and the reciprocal nature of creative inquiries poses a significant barrier to employing traditional CAD systems in complex design problems. Unlike these systems, Machine Learning (ML) models can be implemented to contribute to the creative process by enabling the users to explore otherwise hidden latent space. By doing so, we hypothesize that these systems can go beyond the role of task executors and take an active role in the design process. Furthermore, by training these learning-based models on problem-specific datasets, we aim to capture design intentions and provide relevant solutions as opposed to generic, cookie-cutter algorithms traditional systems incorporate. We believe that changing our perspective on CAD systems from automation and optimization to idea generation and collaboration can facilitate new human-machine interaction scenarios in creative domains.
+
 
 # Background information
 
@@ -100,7 +101,12 @@ _Various forms of a Vase generated from Rhinoceros 3D to explore custome synthet
 # Results
 Input/output/Loss values
 
-# Takeaway
+# Future Work
+This work primarily focuses on stage one of a two stage project. Stage one (Geometric Learning) uses a deep autoencoder that utilizes input from our dataset to train the model into learning the geometric patterns and intentions that can then decode it from the latent space. 
+
+In stage two of this project (Hypothesis Generation), we aim to utilize the decoder from stage one to reconstruct partial or incomplete input through the latent space vector. This stage allows  to  learn  shape  completion  using  an  unsupervised  maximum  likelihood  (ML)  loss  by training a new recognition model, a new encoder.
+
+![](https://github.com/ozgucbertug/latentHeuristics/blob/main/docs/Figure2.jpg?raw=true) _Stage one - Geometric Learning and Stage two - Hypothesis Generation_[4]
 
 # References
 https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
